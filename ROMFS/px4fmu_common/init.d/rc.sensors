@@ -134,7 +134,7 @@ then
 	fi
 fi
 
-# External barometer on I2C bus
+# External barometer on I2C bus @jmurraylouw
 bmp388 -X start
 
 ###############################################################################

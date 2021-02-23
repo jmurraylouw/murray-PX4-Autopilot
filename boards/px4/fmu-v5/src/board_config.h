@@ -325,6 +325,11 @@
 #define PWMIN_TIMER_CHANNEL    /* T4C2 */ 2
 #define GPIO_PWM_IN            /* PD13 */ GPIO_TIM4_CH2IN_2
 
+/* GPIO output pins for potentiometers @jmurraylouw */
+#define MAIN_OUT_6            /* PD14 */ (GPIO_OUTPUT|GPIO_PUSHPULL|GPIO_SPEED_50MHz|GPIO_OUTPUT_SET|GPIO_PORTD|GPIO_PIN14)
+#define MAIN_OUT_7            /* PH6  */ (GPIO_OUTPUT|GPIO_PUSHPULL|GPIO_SPEED_50MHz|GPIO_OUTPUT_SET|GPIO_PORTH|GPIO_PIN6)
+// #define MAIN_OUT_8            /* PH9  */ (GPIO_OUTPUT|GPIO_PUSHPULL|GPIO_SPEED_50MHz|GPIO_OUTPUT_SET|GPIO_PORTH|GPIO_PIN9)
+
 /* Shared pins Both FMU and PX4IO control/monitor
  * FMU Initializes these pins to passive input until it is known
  * if we have and PX4IO on board
