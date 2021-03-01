@@ -69,25 +69,11 @@ int px4_simple_app_main(int argc, char *argv[])
 	// Configure pins for GPIO output @jmurraylouw
 	px4_arch_configgpio(MAIN_OUT_6);
 	px4_arch_configgpio(MAIN_OUT_7);
-	px4_arch_configgpio(MAIN_OUT_8);
+	// px4_arch_configgpio(MAIN_OUT_8);
 
-	for (size_t i = 0; i < 5; i++)
-	{
-		PX4_INFO_bool(px4_arch_gpioread(MAIN_OUT_6)){
-
-		usleep(2*1000*1000); // Wait
-
-		px4_arch_gpiowrite(MAIN_OUT_6, 1);
-
-		PX4_INFO_bool(px4_arch_gpioread(MAIN_OUT_6)){
-
-		usleep(2*1000*1000); // Wait
-
-		px4_arch_gpiowrite(MAIN_OUT_6, 0);
-	}
-
-
-	PX4_INFO("exiting");
+	// Write 3.3V
+	px4_arch_gpiowrite(MAIN_OUT_6, 1);
+	px4_arch_gpiowrite(MAIN_OUT_7, 1);
 
 	return 0;
 }
