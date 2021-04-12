@@ -563,6 +563,9 @@ else
 		reboot
 	fi
 
+	# Run app to enable GPIO pins for pots to measure payload angle @jmurraylouw
+	px4_simple_app
+
 #
 # End of autostart.
 #
