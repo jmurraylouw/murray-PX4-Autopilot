@@ -143,8 +143,11 @@ void PositionControl::_positionControl()
 
 void PositionControl::_velocityControl(const float dt)
 {
+	// Low Pass Filter @jmurraylouw
+	math::LowPassFilter2p	vel_sp_lpf{MEAS_RATE, MEAS_DRIVER_FILTER_FREQ}; // Low Pass Filter for velocity setpoint
+
 	// PID velocity control
-	Vector3f vel_error = _vel_sp - _vel;
+	Vector3f vel_error = vel_sp_lpf.apply(_vel_sp) - _vel;
 	Vector3f acc_sp_velocity = vel_error.emult(_gain_vel_p) + _vel_int - _vel_dot.emult(_gain_vel_d);
 
 	// No control input from setpoints or corresponding states which are NAN
