@@ -64,16 +64,16 @@ void PX4_INFO_bool(bool b)
 
 int px4_simple_app_main(int argc, char *argv[])
 {
-	PX4_INFO("Read write gpio pin");
+	// PX4_INFO("Read write gpio pin");
 
-	// Configure pins for GPIO output @jmurraylouw
-	px4_arch_configgpio(MAIN_OUT_6);
-	px4_arch_configgpio(MAIN_OUT_7);
-	// px4_arch_configgpio(MAIN_OUT_8);
+	// // Configure pins for GPIO output @jmurraylouw
+	// px4_arch_configgpio(MAIN_OUT_6);
+	// px4_arch_configgpio(MAIN_OUT_7);
+	// // px4_arch_configgpio(MAIN_OUT_8);
 
-	// Write 3.3V
-	px4_arch_gpiowrite(MAIN_OUT_6, 1);
-	px4_arch_gpiowrite(MAIN_OUT_7, 1);
+	// // Write 3.3V
+	// px4_arch_gpiowrite(MAIN_OUT_6, 1);
+	// px4_arch_gpiowrite(MAIN_OUT_7, 1);
 
 	return 0;
 }
